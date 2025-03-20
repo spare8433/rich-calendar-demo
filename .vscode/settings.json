@@ -1,0 +1,20 @@
+{
+  "eslint.format.enable": true,
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "css.lint.unknownAtRules": "ignore", // Tailwind CSS 사용시
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint"
+  },
+  "cSpell.words": [
+    "callees",
+    "daygrid",
+    "fullcalendar",
+    "pretendard",
+    "timegrid",
+    "turbopack",
+    "uuidv",
+    "vercel",
+    "XVCJ"
+  ]
+}
