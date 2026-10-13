@@ -58,6 +58,13 @@ interface Props {
 
 export const CalendarContext = createContext<CalendarContextType | null>(null);
 
+/**
+ * CalendarProvider 는 캘린더 context 를 제공하는 컴포넌트입니다.
+ *
+ * 캘린더 `context` 는 캘린더 상태 및 제어 메서드를 제공하며 `CalendarProvider` 하위의 캘린더 관련 컴포넌트에서 `useCalendarContext` 훅을 통해 접근 및 제어 가능
+ * @param calendarRef: FullCalendar 컴포넌트의 Ref
+ * @param children: 캘린더 `context 를 사용할 컴포넌트
+ */
 export function CalendarProvider({ calendarRef, children }: Props) {
   const controls = useCalendarControls(calendarRef);
   return <CalendarContext.Provider value={controls}>{children}</CalendarContext.Provider>;

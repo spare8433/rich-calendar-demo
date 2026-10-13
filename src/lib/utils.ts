@@ -5,25 +5,17 @@ import { twMerge } from "tailwind-merge";
 
 import { FREQUENCY } from "@/constants";
 
-import { CustomError } from "./customError";
-
+// 조건부 클래스 목록을 문자열로 합치고, 서로 충돌하는 Tailwind 클래스는 뒤의 값으로 정리한다.
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
-
-type MutationErrorHandlers = Record<number | "default", (error: CustomError) => void>;
-
-export const handleMutationError = (error: unknown, handlers: MutationErrorHandlers) => {
-  if (error instanceof CustomError && error.statusCode) {
-    (handlers[error.statusCode] || handlers.default)(error);
-  }
-};
 
 interface ScheduleColorVariable extends CSSProperties {
   "--schedule-background": string;
   "--schedule": string;
 }
 
+// 일정 색상 토큰을 일정 배경색과 전경색에 연결할 CSS 변수로 변환한다.
 export const getScheduleColorVariable: (color: ColorType) => ScheduleColorVariable = (color) => {
   return {
     "--schedule-background": `var(--${color}-background)`,
@@ -38,6 +30,7 @@ interface RepeatParam {
   repeatFrequency: RepeatFrequencyType;
 }
 
+// 반복 간격과 반복 횟수를 적용해 마지막 반복 일정의 종료 시각을 계산한다.
 export const calculateRepeatEndDate = (repeatParam: RepeatParam) => {
   const { endDate, repeatInterval, repeatEndCount, repeatFrequency } = repeatParam;
   return dayjs(endDate)
@@ -52,6 +45,7 @@ interface DateRangeParam {
   endAt: string;
 }
 
+// 일정 시작/종료 시각이 이전 값에서 각각 얼마나 이동했는지 밀리초 단위로 계산한다.
 export const calculateDateRangeDiff = (dateRangeParam: DateRangeParam) => {
   const { startAt, endAt, beforeStartAt, beforeEndAt } = dateRangeParam;
   const startDiffMs = dayjs(startAt).diff(dayjs(beforeStartAt));
@@ -60,6 +54,7 @@ export const calculateDateRangeDiff = (dateRangeParam: DateRangeParam) => {
   return { startDiffMs, endDiffMs };
 };
 
+// 이메일 인증 등에 사용할 영문 대문자와 숫자 조합의 6자리 코드를 생성한다.
 export default function generateCode(): string {
   const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"; // 대문자 + 숫자
   let result = "";
