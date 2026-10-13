@@ -16,5 +16,6 @@
     "uuidv",
     "vercel",
     "XVCJ"
-  ]
+  ],
+  "chat.disableAIFeatures": false
 }
