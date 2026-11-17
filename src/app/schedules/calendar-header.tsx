@@ -70,6 +70,7 @@ export default function CalendarHeader({ isSideOpen, onClickSideButton }: Props)
             type="button"
             className={cn("hidden p-2 lg:inline-block", isSideOpen && "bg-accent")}
             variant="outline-image"
+            aria-label={isSideOpen ? "일정 목록 숨기기" : "일정 목록 표시"}
             onClick={onClickSideButton}
           >
             <PanelRightDashed size={24} />
