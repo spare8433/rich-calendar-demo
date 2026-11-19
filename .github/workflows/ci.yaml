@@ -1,0 +1,47 @@
+name: Ci
+
+# 이벤트
+on: 
+  # 수동 실행 허용(테스트용)
+  workflow_dispatch:
+
+  pull_request: 
+    branches: [main]
+
+jobs:  
+  CI:
+    runs-on: ubuntu-latest
+    steps:           
+      - name: 저장소 코드 가져오기
+        uses: actions/checkout@v7
+
+      - name: node 세팅
+        uses: actions/setup-node@v7
+        with: 
+          node-version: lts/*
+      
+      - name: pnpm 세팅
+        run: npm install pnpm
+
+      - name: 의존성 설치
+        run: pnpm ci
+
+      - name: 1. lint
+        run: pnpm next lint
+
+      - name: 2. type check
+        run: pnpm exec tsc --noEmit
+
+      - name: 3. unit test(jest)
+        run: pnpm next lint
+
+      - name: 4. build test
+        run: pnpm next build
+              
+      - name: playwright 브라우저와 OS 의존성 설치
+        run: pnpm exec playwright install --with-deps
+
+      - name: 5. e2e test(playwright)
+        run: pnpm playwright test
+    
+    
