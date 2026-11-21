@@ -56,7 +56,7 @@ export default function FindUsername() {
           <h2 className="text-lg font-medium">아이디 정보 확인</h2>
           <p className="text-muted-foreground">등록하신 이메일정보를 확인해주세요.</p>
           <b className="text-muted-foreground">데모버전의 아이디 찾기는 실제 사용자 정보와 무관합니다.</b>
-          <div className="border-border w-full space-y-4 rounded-lg border py-4 text-center">
+          <div className="w-full space-y-4 rounded-lg border border-border py-4 text-center">
             <p>아이디 : demoUser</p>
             <p>생성일 : 2024-01-01</p>
           </div>

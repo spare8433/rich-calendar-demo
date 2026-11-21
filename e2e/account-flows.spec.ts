@@ -55,8 +55,11 @@ test.describe("계정 메뉴 및 인증 TC", () => {
     const code = (await codeToast.textContent())?.match(/[A-Z0-9]{6}/)?.[0];
     expect(code, "데모에서 생성된 인증코드를 토스트에서 확인할 수 있어야 합니다.").toBeTruthy();
 
+    const verifyButton = page.getByRole("button", { name: "인증" });
+    await expect(verifyButton).toBeDisabled();
     await page.getByPlaceholder("인증코드 입력").fill(code!);
-    await page.getByRole("button", { name: "인증" }).click();
+    await expect(verifyButton).toBeEnabled();
+    await verifyButton.click();
     await expect(page.getByRole("heading", { name: "비밀번호 재설정" })).toBeVisible();
     await expect(page.getByRole("button", { name: "비밀번호 변경" })).toBeVisible();
   });

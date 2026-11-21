@@ -48,7 +48,7 @@ export default function FindPw() {
   const verifyEmailForm = useForm<VerifyCodeFormValues>({
     resolver: zodResolver(verifyCodeSchema),
     defaultValues: { code: "" },
-    mode: "onBlur",
+    mode: "onChange",
   });
 
   const resetPwForm = useForm<ResetPwFormValues>({

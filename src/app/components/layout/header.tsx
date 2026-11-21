@@ -22,7 +22,7 @@ import { useToast } from "@/hooks/use-toast";
 
 export default function Header() {
   return (
-    <header className="bg-muted flex h-12 items-center justify-between border-b px-4">
+    <header className="flex h-12 items-center justify-between border-b bg-muted px-4">
       {/* 로고 */}
       <h1 className="font-medium">Rich Calendar</h1>
 
@@ -53,7 +53,7 @@ const UserPopover = () => {
           {/* 사용자 정보 */}
           <div>
             <p className="text-base font-medium">demoUser</p>
-            <p className="text-muted-foreground text-sm">yourWatchDemo@rich.calendar</p>
+            <p className="text-sm text-muted-foreground">yourWatchDemo@rich.calendar</p>
           </div>
         </div>
 

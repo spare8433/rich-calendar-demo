@@ -75,7 +75,7 @@ export default function Login() {
         </form>
       </Form>
 
-      <div className="text-muted-foreground divide-muted-foreground flex divide-x">
+      <div className="flex divide-x divide-muted-foreground text-muted-foreground">
         <Link href="/auth/find-username" className="px-3 text-sm">
           아이디 찾기
         </Link>

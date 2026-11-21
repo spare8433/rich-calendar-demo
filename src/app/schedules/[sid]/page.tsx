@@ -28,7 +28,7 @@ export default function ScheduleDetail() {
   return (
     <div className="absolute left-0 top-0 z-10 flex size-full flex-col overflow-hidden bg-white">
       {/* content title */}
-      <div className="border-b-muted flex h-12 items-center space-x-1 border border-b-2">
+      <div className="flex h-12 items-center space-x-1 border border-b-2 border-b-muted">
         <Button
           type="button"
           variant="image-icon-active"
@@ -82,7 +82,7 @@ const ScheduleDetailForm = ({ scheduleId, schedule }: { scheduleId: string; sche
 
   return (
     <Form {...form}>
-      <p className="text-muted-foreground mb-6 font-semibold">
+      <p className="mb-6 font-semibold text-muted-foreground">
         ※ 해당 일정은 반복일정으로 변경된 내용이 개별적으로 적용되지 않고 반복된 일정 전체에 적용됩니다.
       </p>
       <ScheduleForm onSubmit={() => setConfirmOpen(true)}>

@@ -6,7 +6,7 @@ export default function TimePicker({ className, ...rest }: React.ComponentProps<
     <Input
       type="time"
       className={cn(
-        "border-input bg-background hover:bg-accent hover:text-accent-foreground w-fit cursor-pointer border font-normal",
+        "w-fit cursor-pointer border border-input bg-background font-normal hover:bg-accent hover:text-accent-foreground",
         className,
       )}
       {...rest}

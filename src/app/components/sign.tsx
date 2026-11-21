@@ -24,7 +24,7 @@ export default function Sign({ src, size, className }: Props) {
   return (
     <Avatar className={cn(className, sizes[size])}>
       <AvatarImage src={src && src} />
-      <AvatarFallback className="bg-background border">
+      <AvatarFallback className="border bg-background">
         <UserRound size={innerSizes[size]} className="text-muted-foreground" />
       </AvatarFallback>
     </Avatar>

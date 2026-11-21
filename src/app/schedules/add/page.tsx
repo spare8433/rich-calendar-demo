@@ -62,7 +62,7 @@ export default function ScheduleAdd() {
   return (
     <div className="absolute left-0 top-0 z-10 flex size-full flex-col overflow-hidden bg-white">
       {/* content title */}
-      <div className="border-b-muted flex h-12 items-center space-x-1 border border-b-2">
+      <div className="flex h-12 items-center space-x-1 border border-b-2 border-b-muted">
         <Button
           type="button"
           variant="image-icon-active"

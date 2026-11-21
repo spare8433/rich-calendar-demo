@@ -33,7 +33,7 @@ export default function VerifyEmailModal({ changeIsOpen, updateEmail }: VerifyEm
   const verifyEmailForm = useForm<VerifyCodeFormValues>({
     resolver: zodResolver(verifyCodeSchema),
     defaultValues: { code: "" },
-    mode: "onBlur",
+    mode: "onChange",
   });
 
   const { email } = sendEmailForm.watch();

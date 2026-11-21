@@ -10,15 +10,15 @@ const variantObject: Record<string, { icon: JSX.Element; duration: number }> = {
     duration: 3000,
   },
   success: {
-    icon: <CheckCircle className="text-green size-6" />,
+    icon: <CheckCircle className="size-6 text-green" />,
     duration: 3000,
   },
   warning: {
-    icon: <AlertTriangle className="text-yellow size-6" />,
+    icon: <AlertTriangle className="size-6 text-yellow" />,
     duration: 5000,
   },
   destructive: {
-    icon: <XCircle className="text-pink size-6" />,
+    icon: <XCircle className="size-6 text-pink" />,
     duration: 6000,
   },
 };

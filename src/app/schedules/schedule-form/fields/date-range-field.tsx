@@ -72,7 +72,7 @@ export default function DateRangeField() {
       </div>
 
       {/* 에러메시지 */}
-      {getDateErrorMessage() && <div className="text-destructive pl-2 text-sm">{getDateErrorMessage()}</div>}
+      {getDateErrorMessage() && <div className="pl-2 text-sm text-destructive">{getDateErrorMessage()}</div>}
     </div>
   );
 }

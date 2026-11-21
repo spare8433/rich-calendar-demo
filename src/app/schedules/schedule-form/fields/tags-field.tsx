@@ -234,12 +234,12 @@ export default function TagsField() {
         {/* 실제 활성화된 tag 목록 */}
         {tags.length > 0 ? (
           tags.map((tag, index) => (
-            <div key={tag.id} className="border-muted-foreground rounded-full border px-3 py-1.5 text-sm font-medium">
+            <div key={tag.id} className="rounded-full border border-muted-foreground px-3 py-1.5 text-sm font-medium">
               {tag.title}
             </div>
           ))
         ) : (
-          <span className="text-muted-foreground text-sm">지정된 태그가 존재하지 않습니다.</span>
+          <span className="text-sm text-muted-foreground">지정된 태그가 존재하지 않습니다.</span>
         )}
       </div>
     </div>

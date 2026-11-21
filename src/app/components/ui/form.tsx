@@ -107,7 +107,7 @@ const FormDescription = React.forwardRef<HTMLParagraphElement, React.HTMLAttribu
     const { formDescriptionId } = useFormField();
 
     return (
-      <p ref={ref} id={formDescriptionId} className={cn("text-muted-foreground text-[0.8rem]", className)} {...props} />
+      <p ref={ref} id={formDescriptionId} className={cn("text-[0.8rem] text-muted-foreground", className)} {...props} />
     );
   },
 );
@@ -126,7 +126,7 @@ const FormMessage = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<
       <p
         ref={ref}
         id={formMessageId}
-        className={cn("text-destructive text-[0.8rem] font-medium", className)}
+        className={cn("text-[0.8rem] font-medium text-destructive", className)}
         {...props}
       >
         {body}
@@ -145,7 +145,7 @@ const CustomFormMessage = React.forwardRef<
   if (!error) return;
 
   return error.type === "server" ? (
-    <p ref={ref} id={formMessageId} className={cn("text-destructive text-sm font-medium", className)} {...props}>
+    <p ref={ref} id={formMessageId} className={cn("text-sm font-medium text-destructive", className)} {...props}>
       {error.message}&nbsp;&nbsp;
       <Button type="button" variant="link" size={null} onClick={retry}>
         다시시도

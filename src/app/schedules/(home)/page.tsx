@@ -126,7 +126,7 @@ const CalendarSideMenu = () => {
                 href={`/schedule/${schedule.id}`}
               >
                 <h4 className="text-sm">{schedule.title}</h4>
-                <p className="text-muted-foreground flex text-xs">
+                <p className="flex text-xs text-muted-foreground">
                   {schedule.tagTitles.length > 0 && `${schedule.tagTitles.join(" · ")}`}
                 </p>
               </Link>

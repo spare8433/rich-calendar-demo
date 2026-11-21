@@ -118,7 +118,7 @@ export default function RepeatFieldGroup() {
             </div>
 
             {/* 반복 옵션 fields 통합 에러메시지 */}
-            {getPeriodErrorMessage() && <div className="text-destructive pl-2 text-sm">{getPeriodErrorMessage()}</div>}
+            {getPeriodErrorMessage() && <div className="pl-2 text-sm text-destructive">{getPeriodErrorMessage()}</div>}
           </div>
         </div>
 
